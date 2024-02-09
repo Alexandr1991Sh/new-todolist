@@ -72,7 +72,7 @@ export function Todolist(props: PropsType) {
                         {/*<Checkbox checked={t.isDone} color="primary" onChange={onChangeHandler}/>*/}
                         <SuperCheckbox
                             isDone={t.isDone}
-                            callBack={(isDone: boolean) => onChangeHandler(t.id,isDone)}
+                            callBack={(isDone) => onChangeHandler(t.id,isDone)}
                         />
 
                         <EditableSpan value={t.title} onChange={onTitleChangeHandler}/>

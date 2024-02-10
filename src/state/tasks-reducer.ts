@@ -28,7 +28,7 @@ export const tasksReducer = (state: TasksStateType, action: ActionTaskType): Tas
             return {
                 ...state,
                 [action.payload.todolistId]: state[action.payload.todolistId]
-                    .map(el => el.id !== action.payload.todolistId
+                    .map(el => el.id === action.payload.id
                         ? {...el, isDone: action.payload.isDone} : el)
             }
         }
@@ -36,7 +36,7 @@ export const tasksReducer = (state: TasksStateType, action: ActionTaskType): Tas
             return {
                 ...state,
                 [action.payload.todolistId]: state[action.payload.todolistId]
-                    .map(el => el.id !== action.payload.todolistId
+                    .map(el => el.id === action.payload.id
                         ? {...el, title: action.payload.newTitle} : el)
             }
         }

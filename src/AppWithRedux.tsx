@@ -56,74 +56,36 @@ function AppWithRedux() {
 
 
     function removeTask(id: string, todolistId: string) {
-        // let todolistTasks = tasks[todolistId];
-        // tasks[todolistId] = todolistTasks.filter(t => t.id != id);
-        // setTasks({...tasks});
-        dispatchTasks(removeTaskAC(id,todolistId))
+        dispatchTasks(removeTaskAC(id, todolistId))
     }
 
     function addTask(title: string, todolistId: string) {
-        // let task = {id: v1(), title: title, isDone: false};
-        // let todolistTasks = tasks[todolistId];
-        // tasks[todolistId] = [task, ...todolistTasks];
-        // setTasks({...tasks});
-        dispatchTasks(addTaskAC(title,todolistId))
+        dispatchTasks(addTaskAC(title, todolistId))
     }
 
     function changeStatus(id: string, isDone: boolean, todolistId: string) {
-        // let todolistTasks = tasks[todolistId];
-        // let task = todolistTasks.find(t => t.id === id);
-        // if (task) {
-        //     task.isDone = isDone;
-        //     // setTasks({...tasks});
-        // }
-        dispatchTasks(changeTaskStatusAC(id,isDone,todolistId))
+        dispatchTasks(changeTaskStatusAC(id, isDone, todolistId))
     }
 
     function changeTaskTitle(id: string, newTitle: string, todolistId: string) {
-        // let todolistTasks = tasks[todolistId];
-        // let task = todolistTasks.find(t => t.id === id);
-        // if (task) {
-        //     task.title = newTitle;
-        //     // setTasks({...tasks});
-        // }
-        dispatchTasks(changeTaskTitleAC(id,newTitle,todolistId))
+        dispatchTasks(changeTaskTitleAC(id, newTitle, todolistId))
     }
 
     function changeFilter(value: FilterValuesType, todolistId: string) {
-        // let todolist = todolists.find(tl => tl.id === todolistId);
-        // if (todolist) {
-        //     todolist.filter = value;
-        //     // setTodolists([...todolists])
-        // }
-        dispatchTodolists(changeTodolistFilterAC(value,todolistId))
+        dispatchTodolists(changeTodolistFilterAC(value, todolistId))
     }
 
     function removeTodolist(id: string) {
-        // setTodolists(todolists.filter(tl => tl.id != id));
-        // delete tasks[id];
-        // setTasks({...tasks});
-        dispatchTodolists(removeTodolistAC(id))
-        dispatchTasks(removeTodolistAC(id))
+        const action = removeTodolistAC(id)
+        dispatchTodolists(action)
+        dispatchTasks(action)
     }
 
     function changeTodolistTitle(id: string, title: string) {
-        // const todolist = todolists.find(tl => tl.id === id);
-        // if (todolist) {
-        //     todolist.title = title;
-        //     // setTodolists([...todolists]);
-        // }
-        dispatchTodolists(changeTodolistTitleAC(id,title))
+        dispatchTodolists(changeTodolistTitleAC(id, title))
     }
 
     function addTodolist(title: string) {
-        // let newTodolistId = v1();
-        // let newTodolist: TodolistType = {id: newTodolistId, title: title, filter: 'all'};
-        // setTodolists([newTodolist, ...todolists]);
-        // setTasks({
-        //     ...tasks,
-        //     [newTodolistId]: []
-        // })
         const action = addTodolistAC(title)
         dispatchTodolists(action)
         dispatchTasks(action)

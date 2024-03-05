@@ -1,12 +1,12 @@
 import React, {ChangeEvent, memo, useCallback} from 'react';
-import {SuperCheckbox} from "./state/SuperCheckbox";
-import {EditableSpan} from "./EditableSpan";
+import {SuperCheckbox} from "../state/SuperCheckbox";
+import {EditableSpan} from "../EditableSpan/EditableSpan";
 import IconButton from "@mui/material/IconButton/IconButton";
 import {Delete} from "@mui/icons-material";
-import {TaskType} from "./Todolist";
+import {TaskType} from "../Todolist";
 import {Checkbox} from "@mui/material";
 
-type TaskPropsType = {
+export type TaskPropsType = {
     todolistId: string
     task: TaskType
     changeTaskTitle: (taskId: string, newTitle: string, todolistId: string) => void

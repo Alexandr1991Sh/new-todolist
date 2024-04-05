@@ -1,5 +1,5 @@
 import React, {ChangeEvent, memo, useCallback} from 'react';
-import {SuperCheckbox} from "../state/SuperCheckbox";
+import {SuperCheckbox} from "../SuperCheckbox";
 import {EditableSpan} from "../EditableSpan/EditableSpan";
 import IconButton from "@mui/material/IconButton/IconButton";
 import {Delete} from "@mui/icons-material";

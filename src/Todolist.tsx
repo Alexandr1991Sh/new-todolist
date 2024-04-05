@@ -5,7 +5,7 @@ import {EditableSpan} from './EditableSpan/EditableSpan';
 import IconButton from '@mui/material/IconButton/IconButton';
 import {Delete} from "@mui/icons-material";
 import {Button, Checkbox} from "@mui/material";
-import {SuperCheckbox} from "./state/SuperCheckbox";
+import {SuperCheckbox} from "./SuperCheckbox";
 import {SuperButton} from "./SuperButton";
 import {Task} from "./Task/Task";
 
